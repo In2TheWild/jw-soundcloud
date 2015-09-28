@@ -7,13 +7,7 @@ open System
 open System.Linq
 open FSharp.Data
 
-module Wk =
-    let name = "wk"
-
 module Ploy =
-
-    let x() = 100
-
     type SlUsers = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/users.json">
     type SlTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/tracks.json">
     type SlUserTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/userTracks.json">
@@ -26,8 +20,7 @@ module Ploy =
     }
 
     type ConfigLoader() =
-        member this.Default() =
-            {
+        member this.Default() = {
                 Config.ClientId = "6abc49dd6e4bf58c4d8829def2260ec9"
                 ClientSecret = "1b148a720c7d105b0fdae5a3120efff8"
                 EndUserAuthentication = "https://soundcloud.com/connect"
