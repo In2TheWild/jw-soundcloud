@@ -1,22 +1,22 @@
-## Get paket.exe
+#### Get paket.exe
 
 ```
 ./get.sh
 ```
 
-### Install
+#### Install
 
 ```
 ./install.sh
 ```
 
-### Build
+#### Build
 
 ```
 ./build.sh
 ```
 
-### Run
+#### Run
 
 ```
 mono out/jw.exe
