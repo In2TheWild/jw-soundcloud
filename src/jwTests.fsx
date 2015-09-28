@@ -4,8 +4,8 @@
 
 open FsUnit
 open NUnit.Framework
-open Jw
+open Jw.Ploy
 
 [<Test>]
 let ShouldGetUserInfo() =
-    ()
+    100 |> should equal 100
