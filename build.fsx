@@ -44,8 +44,11 @@ Target "test" (fun _ ->
 
 Target "watch" (fun _ ->
         let watcher = !! "src/*.fsx" |> WatchChanges (fun changes ->
-                tracefn "%A" changes
-                Run "buildTestDll"
+                try
+                    tracefn "%A" changes
+                    Run "buildTestDll"
+                with ex ->
+                    Console.WriteLine ex.Message
             )
         Console.ReadLine() |> ignore
         watcher.Dispose()

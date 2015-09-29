@@ -7,5 +7,6 @@ open Jw.Ploy
 let main args =
     let config = ConfigLoader().Default()
     let runner =  JwRunner(config)
-    runner.GetUserInfo("jannine-weigel").Uri |> Console.WriteLine
+    runner.DownloadArkworks("temp/artworks")
+    runner.DownloadStreams("temp/streams")
     0
