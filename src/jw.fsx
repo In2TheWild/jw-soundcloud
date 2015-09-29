@@ -65,7 +65,7 @@ module Ploy =
 
         member private this.Download (target: string) (url: string , label: string) =
             async {
-                Screen.Info "|| download" url
+                Screen.Info "|| download" label
                 let path = Path.Combine(target, label)
                 match Http.Request(url).Body with
                 | Text text -> ()
@@ -86,8 +86,6 @@ module Ploy =
             let usr = defaultArg user "jannina-weigel"
             let artkworks = api.UserTracks usr |> api.GetArtworksUrl
             if not( Directory.Exists target) then Directory.CreateDirectory target |> ignore
-
-            Screen.Info "|| artworks" (sprintf "%A" artkworks)
 
             artkworks
             |> Seq.map (fun x -> this.Download target (x))
