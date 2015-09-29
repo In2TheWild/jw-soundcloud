@@ -59,6 +59,11 @@ module Ploy =
 
         let api = SlApi(config)
 
+        let createDir target =
+            if not (Directory.Exists target) then
+                Directory.CreateDirectory target
+            else DirectoryInfo target
+
         member private this.DownloadFile(url: string, target: string) =
             use stream = new FileStream(target,FileMode.Open, FileAccess.Write)
             Http.RequestStream(url).ResponseStream.CopyTo stream
@@ -74,7 +79,7 @@ module Ploy =
         member this.DownloadStreams(target: string, ?user: string) =
             let usr = defaultArg user "jannina-weigel"
             let streams = api.UserTracks usr |> api.GetStreamsUrl
-            if not (Directory.Exists target) then Directory.CreateDirectory target |> ignore
+            createDir target |> ignore
 
             streams
             |> Seq.map (fun x -> this.Download target x)
@@ -85,7 +90,7 @@ module Ploy =
         member this.DownloadArkworks(target: string, ?user: string) =
             let usr = defaultArg user "jannina-weigel"
             let artkworks = api.UserTracks usr |> api.GetArtworksUrl
-            if not( Directory.Exists target) then Directory.CreateDirectory target |> ignore
+            createDir target |> ignore
 
             artkworks
             |> Seq.map (fun x -> this.Download target (x))
