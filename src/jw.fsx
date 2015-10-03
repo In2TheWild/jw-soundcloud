@@ -98,17 +98,3 @@ module Ploy =
             |> Async.RunSynchronously
             |> ignore
 
-
-
-
-
-
-
-
-
-
-
-
-
-module Hello =
-    let world = ":)"
