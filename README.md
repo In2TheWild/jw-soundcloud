@@ -1,6 +1,6 @@
 ## Soundcloud Downloader
 
-![Build status](https://ci.appveyor.com/api/projects/status/9p2bkw7sj0pwy6rs/branch/master?svg=true)]
+![Build status](https://ci.appveyor.com/api/projects/status/9p2bkw7sj0pwy6rs/branch/master?svg=true)
 
 ### Usage
 
