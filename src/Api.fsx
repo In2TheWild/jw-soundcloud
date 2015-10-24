@@ -1,5 +1,5 @@
 
-#I "../packages/FSharp.Data/lib/net40/"
+#I @"../packages/FSharp.Data/lib/net40/"
 #r "FSharp.Data.DesignTime.dll"
 #r "FSharp.Data.dll"
 
@@ -97,4 +97,3 @@ module Api =
             |> Async.Parallel
             |> Async.RunSynchronously
             |> ignore
-
