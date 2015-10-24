@@ -2,6 +2,7 @@
 #load "Api.fsx"
 
 open System
+open System.IO
 open Api.Api
 open Nessos.Argu
 
@@ -31,6 +32,9 @@ let main args =
         let userId = results.GetResult(<@ UserId @>, defaultValue = "jannina-weigel")
         let output = results.GetResult(<@ Output @>, defaultValue = "./")
         let content = results.GetResult(<@ Content @>, defaultValue = "stream")
+
+        if not (Directory.Exists output) then
+            Directory.CreateDirectory output |> ignore
 
         match content with
         | "stream" -> runner.DownloadStreams(output, userId)

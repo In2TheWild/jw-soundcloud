@@ -1,23 +1,16 @@
-#### Get paket.exe
+## Soundcloud Downloader
+
+### Usage
 
 ```
-./get.sh
+$ soundcloud-dl --userid <user> --output <directory> --content <type>
 ```
 
-#### Install
+### Help (soundcloud-dl --help)
 
 ```
-./install.sh
-```
-
-#### Build
-
-```
-./build.sh
-```
-
-#### Run
-
-```
-mono out/jw.exe
+	--userid <string>: specify user id.
+	--output <string>: specify output directory (default: ./).
+	--content <string>: specify content type (stream or artwork) (default: stream).
+	--help [-h|/h|/help|/?]: display this list of options.
 ```
