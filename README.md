@@ -1,5 +1,7 @@
 ## Soundcloud Downloader
 
+[![Build status](https://ci.appveyor.com/api/projects/status/9p2bkw7sj0pwy6rs?svg=true)](https://ci.appveyor.com/project/somnuk-wk/soundcloud-dl)
+
 ### Usage
 
 ```
