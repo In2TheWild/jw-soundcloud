@@ -2,16 +2,22 @@
 #I @"../packages/FSharp.Data/lib/net40/"
 #r "FSharp.Data.DesignTime.dll"
 #r "FSharp.Data.dll"
+#load "../Provider.fsx"
 
 open System
 open System.Linq
 open FSharp.Data
 open System.IO
+open Provider
 
 module Api =
+
+    (*
     type SlUsers = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/users.json">
     type SlTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/tracks.json">
     type SlUserTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/userTracks.json">
+    *)
+
 
     type Screen() =
         static member Info s1 s2 =

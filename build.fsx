@@ -13,6 +13,14 @@ let outDir = "out"
 let testDll = Path.Combine(outDir, "soundcloud-dl.dll")
 let exe = Path.Combine(outDir, "soundcloud-dl.exe")
 
+
+// https://github.com/fsharp/FAKE/issues/689
+let framework = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\.NETFramework\v4.0\4.3.1.0\FSharp.Core.dll"
+let mscorlib = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll"
+let system = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll"
+let systemCore = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll"
+
+
 if not (Directory.Exists outDir) then Directory.CreateDirectory outDir |> ignore
 
 let GetDll(name: string) =
@@ -30,14 +38,21 @@ let Copy(info: FileInfo) =
 |> Seq.iter (GetDll >> Copy)
 
 Target "buildExe" (fun _ ->
+        let os = System.Environment.OSVersion.Platform
+        let others =
+            match os with
+            | PlatformID.Win32NT ->
+                [ "--noframework"; "-r"; framework; "-r"; mscorlib; "-r"; system; "-r"; systemCore]
+            | _ -> []
+            
         ["src/Api.fsx"; "src/Program.fsx"]
         |> Fsc (fun p ->
-            { p with Output = exe})
+            { p with Output = exe; OtherParams = others})
 )
 
 Target "buildTestDll" (fun _ ->
         ["src/Api.fsx"; "src/Tests.fsx"]
-        |> Fsc (fun p -> { p with FscTarget = Library; Output = testDll })
+        |> Fsc (fun p -> { p with FscTarget = Library; Output = testDll; Platform = X86})
     )
 
 Target "test" (fun _ ->
