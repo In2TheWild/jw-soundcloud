@@ -10,8 +10,8 @@ open System
 open System.Linq
 
 let outDir = "out"
-let testDll = Path.Combine(outDir, "jwTests.dll")
-let exe = Path.Combine(outDir, "jw.exe")
+let testDll = Path.Combine(outDir, "soundcloud-dl.dll")
+let exe = Path.Combine(outDir, "soundcloud-dl.exe")
 
 let GetDll(name: string) =
     DirectoryInfo("packages").GetFiles(name, SearchOption.AllDirectories) |> Seq.head
@@ -23,17 +23,18 @@ let Copy(info: FileInfo) =
 
 [
     "FSharp.Data.dll"
+    "Argu.dll"
     "FSharp.Data.DesignTime.dll" ]
 |> Seq.iter (GetDll >> Copy)
 
 Target "buildExe" (fun _ ->
-        ["src/jw.fsx"; "src/program.fsx"]
+        ["src/Api.fsx"; "src/Program.fsx"]
         |> Fsc (fun p ->
             { p with Output = exe})
 )
 
 Target "buildTestDll" (fun _ ->
-        ["src/jw.fsx"; "src/jwTests.fsx"]
+        ["src/Api.fsx"; "src/Tests.fsx"]
         |> Fsc (fun p -> { p with FscTarget = Library; Output = testDll })
     )
 
@@ -58,4 +59,4 @@ Target "watch" (fun _ ->
     ==> "buildTestDll"
     ==> "test"
 
-RunTargetOrDefault "watch"
+RunTargetOrDefault "buildExe"

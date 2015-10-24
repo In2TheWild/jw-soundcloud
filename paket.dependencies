@@ -6,3 +6,4 @@ nuget Newtonsoft.Json
 nuget FSharp.Data
 nuget FsUnit
 nuget NUnit.Console
+nuget Argu

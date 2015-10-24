@@ -8,7 +8,7 @@ open System.Linq
 open FSharp.Data
 open System.IO
 
-module Ploy =
+module Api =
     type SlUsers = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/users.json">
     type SlTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/tracks.json">
     type SlUserTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/userTracks.json">
@@ -38,7 +38,7 @@ module Ploy =
 
         member this.UserTracks(user: string) =
             let url = sprintf "%s/users/%s/tracks?%s" baseUrl user clientId
-            Screen.Info "|| url" url
+            //Screen.Info "|| url" url
             url |> Http.RequestString |> SlUserTracks.Parse
 
         member this.Tracks(track: string) =
@@ -55,7 +55,7 @@ module Ploy =
         member this.GetStreamsUrl (tracks: SlUserTracks.Root[]) =
             tracks |> Seq.map(fun x -> (sprintf "%s?%s" x.StreamUrl clientId, sprintf "%s.mp3" x.Permalink))
 
-    type JwRunner(config: Config) =
+    type Runner(config: Config) =
 
         let api = SlApi(config)
 
