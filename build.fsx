@@ -13,6 +13,8 @@ let outDir = "out"
 let testDll = Path.Combine(outDir, "soundcloud-dl.dll")
 let exe = Path.Combine(outDir, "soundcloud-dl.exe")
 
+if not (Directory.Exists outDir) then Directory.CreateDirectory outDir |> ignore
+
 let GetDll(name: string) =
     DirectoryInfo("packages").GetFiles(name, SearchOption.AllDirectories) |> Seq.head
 
