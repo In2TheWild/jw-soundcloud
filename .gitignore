@@ -1,6 +1,4 @@
 out
 packages
-.paket
-*.lock
 *.swp
 temp
