@@ -13,6 +13,6 @@ $ sldl --user <user> --out <directory> --content <type>
 ```
 	--user <string>: specify user id.
 	--out <string>: specify output directory (default: ./).
-	--content <string>: specify content type (stream or artwork) (default: stream).
+	--content <string>: specify content type (mp3 or art) (default: mp3).
 	--help [-h|/h|/help|/?]: display this list of options.
 ```
