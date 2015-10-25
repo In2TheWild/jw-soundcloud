@@ -2,6 +2,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9p2bkw7sj0pwy6rs/branch/master?svg=true)](https://ci.appveyor.com/project/wearetherock/soundcloud-dl/branch/master)
 
+[![Build Status](https://travis-ci.org/In2TheWild/soundcloud-dl.svg?branch=master)](https://travis-ci.org/In2TheWild/soundcloud-dl)
+
 
 ### Download
 
