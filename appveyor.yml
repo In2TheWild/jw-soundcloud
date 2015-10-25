@@ -11,7 +11,7 @@ deploy:
   description: 'Release $(appveyor_build_version)'
   provider: GitHub
   auth_token:
-    secure: 135a1d630c96eecc5b7f3e94391ca3d0da7cba3a # your encrypted token from GitHub
+    secure: ZUI/J+KOm2wseKsbRjCliK+mtStCASQFH62eT+iU2HhP7pASL9gFvl6Rt0tdER5o
   artifact: out/sldl.zip           # upload all NuGet packages to release assets
   draft: false
   prerelease: false
