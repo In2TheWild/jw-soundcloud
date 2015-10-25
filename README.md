@@ -2,6 +2,11 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9p2bkw7sj0pwy6rs/branch/master?svg=true)](https://ci.appveyor.com/project/wearetherock/soundcloud-dl/branch/master)
 
+
+### Download
+
+[Lastest version](https://ci.appveyor.com/project/wearetherock/soundcloud-dl/branch/master/artifacts)
+
 ### Usage
 
 ```
