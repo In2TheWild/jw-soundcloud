@@ -8,13 +8,13 @@ artifacts:
 
 deploy:
   release: sldl-v$(appveyor_build_version)
-  description: 'Release $(appveyor_build_version)'
+  description: 'Release version $(appveyor_build_version)'
   provider: GitHub
   auth_token:
-    secure: ZUI/J+KOm2wseKsbRjCliK+mtStCASQFH62eT+iU2HhP7pASL9gFvl6Rt0tdER5o
+    secure: Ztw9bM84uGaHWLK3Mb8efKO1hcHcDOT3PUtQBnHTnkyYkjGf0iZPb5Mln0U/7O/s
   artifact: out/sldl.zip           # upload all NuGet packages to release assets
   draft: false
   prerelease: false
   on:
-    # branch: master               # release from master branch only
+    branch: master               # release from master branch only
     appveyor_repo_tag: true        # deploy on tag push only
