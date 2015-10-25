@@ -6,3 +6,4 @@ nuget FSharp.Data
 nuget FsUnit
 nuget NUnit.Console
 nuget Argu
+nuget FSharp.Core
