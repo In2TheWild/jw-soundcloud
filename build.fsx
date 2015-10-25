@@ -10,8 +10,8 @@ open System
 open System.Linq
 
 let outDir = "out"
-let testDll = Path.Combine(outDir, "soundcloud-dl.dll")
-let exe = Path.Combine(outDir, "soundcloud-dl.exe")
+let testDll = Path.Combine(outDir, "sldl.dll")
+let exe = Path.Combine(outDir, "sldl.exe")
 
 
 // https://github.com/fsharp/FAKE/issues/689
@@ -44,7 +44,7 @@ Target "buildExe" (fun _ ->
             | PlatformID.Win32NT ->
                 [ "--noframework"; "-r"; framework; "-r"; mscorlib; "-r"; system; "-r"; systemCore]
             | _ -> []
-            
+
         ["src/Api.fsx"; "src/Program.fsx"]
         |> Fsc (fun p ->
             { p with Output = exe; OtherParams = others})

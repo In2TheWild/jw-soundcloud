@@ -2,22 +2,19 @@
 #I @"../packages/FSharp.Data/lib/net40/"
 #r "FSharp.Data.DesignTime.dll"
 #r "FSharp.Data.dll"
-#load "../Provider.fsx"
+// #load "../Provider.fsx"
 
 open System
 open System.Linq
 open FSharp.Data
 open System.IO
-open Provider
+// open Provider
 
 module Api =
 
-    (*
-    type SlUsers = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/users.json">
-    type SlTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/tracks.json">
-    type SlUserTracks = JsonProvider<"/Users/wk/Source/jw/jw-soundcloud/src/json/userTracks.json">
-    *)
-
+    type SlUsers = JsonProvider<"./data/json/users.json">
+    type SlTracks = JsonProvider<"./data/json/tracks.json">
+    type SlUserTracks = JsonProvider<"./data/json/userTracks.json">
 
     type Screen() =
         static member Info s1 s2 =
@@ -44,7 +41,6 @@ module Api =
 
         member this.UserTracks(user: string) =
             let url = sprintf "%s/users/%s/tracks?%s" baseUrl user clientId
-            //Screen.Info "|| url" url
             url |> Http.RequestString |> SlUserTracks.Parse
 
         member this.Tracks(track: string) =
@@ -76,7 +72,7 @@ module Api =
 
         member private this.Download (target: string) (url: string , label: string) =
             async {
-                Screen.Info "|| download" label
+                Screen.Info "|| downloading" label
                 let path = Path.Combine(target, label)
                 match Http.Request(url).Body with
                 | Text text -> ()
@@ -93,7 +89,7 @@ module Api =
             |> Async.RunSynchronously
             |> ignore
 
-        member this.DownloadArkworks(target: string, ?user: string) =
+        member this.DownloadArtworks(target: string, ?user: string) =
             let usr = defaultArg user "jannina-weigel"
             let artkworks = api.UserTracks usr |> api.GetArtworksUrl
             createDir target |> ignore

@@ -5,6 +5,6 @@
 
 open FSharp.Data
 
-type SlUsers = JsonProvider<"src/json/users.json">
-type SlTracks = JsonProvider<"src/json/tracks.json">
-type SlUserTracks = JsonProvider<"src/json/userTracks.json">
+type SlUsers = JsonProvider<"data/json/users.json">
+type SlTracks = JsonProvider<"data/json/tracks.json">
+type SlUserTracks = JsonProvider<"data/json/userTracks.json">

@@ -1,0 +1,33 @@
+{
+    "id": 67393202,
+    "kind": "user",
+    "permalink": "jannina-weigel",
+    "username": "Jannina Weigel",
+    "last_modified": "2015/09/18 18:10:58 +0000",
+    "uri": "https://api.soundcloud.com/users/67393202",
+    "permalink_url": "http://soundcloud.com/jannina-weigel",
+    "avatar_url": "https://i1.sndcdn.com/avatars-000177239410-u9n99k-large.jpg",
+    "country": null,
+    "first_name": "Jannina",
+    "last_name": "Weigel",
+    "full_name": "Jannina Weigel",
+    "description": "Hi, everyone! Welcome to my channel! \r\nI am Jannina W I was born 30 July 2000 in Germany.I'm half German-Thai.\r\n\u0e1e\u0e25\u0e2d\u0e22\u0e0a\u0e21\u0e1e\u0e39\u0e40\u0e1b\u0e47\u0e19\u0e04\u0e19\u0e44\u0e17\u0e22\u0e19\u0e30\u0e04\u0e30 (\u0e25\u0e39\u0e01\u0e04\u0e23\u0e36\u0e48\u0e07\u0e44\u0e17\u0e22-\u0e40\u0e22\u0e2d\u0e23\u0e21\u0e31\u0e19) \u0e02\u0e2d\u0e41\u0e23\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e23\u0e4c\u0e08\u0e32\u0e01\u0e04\u0e19\u0e44\u0e17\u0e22\u0e14\u0e49\u0e27\u0e22\u0e19\u0e30\u0e04\u0e30 \u0e08\u0e38\u0e4a\u0e1a\u0e46\u0e46\u0e46",
+    "city": null,
+    "discogs_name": null,
+    "myspace_name": null,
+    "website": null,
+    "website_title": null,
+    "online": false,
+    "track_count": 59,
+    "playlist_count": 0,
+    "plan": "Pro Plus",
+    "public_favorites_count": 77,
+    "followers_count": 27375,
+    "followings_count": 11,
+    "subscriptions": [{
+        "product": {
+            "id": "creator-pro-unlimited",
+            "name": "Pro Unlimited"
+        }
+    }]
+}
