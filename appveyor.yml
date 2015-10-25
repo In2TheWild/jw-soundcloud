@@ -12,9 +12,9 @@ deploy:
   provider: GitHub
   auth_token:
     secure: 135a1d630c96eecc5b7f3e94391ca3d0da7cba3a # your encrypted token from GitHub
-  artifact: out/sldl.zip            # upload all NuGet packages to release assets
+  artifact: out/sldl.zip           # upload all NuGet packages to release assets
   draft: false
   prerelease: false
   on:
-    # branch: master                 # release from master branch only
+    # branch: master               # release from master branch only
     appveyor_repo_tag: true        # deploy on tag push only
